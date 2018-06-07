@@ -118,7 +118,9 @@ const md = `
 
 	{{ range $dr := $pr.Results }}{{ $dec := $dr.Decoder }}
 		* **{{ $dec.Desc }}**
+
 		  Err: ` + "`{{ $dr.Err }}`" + `
+
 			{{ $dr.Err | spew | code "go" | details | indent 2 }}
 
 	{{ end }}
