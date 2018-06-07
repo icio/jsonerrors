@@ -34,7 +34,7 @@ struct { Cat string "json:\"cat\"" }
 		<details>
 		
 		```go
-		(*errors.errorString)(0xc420096c30)({
+		(*errors.errorString)(0xc420010c50)({
 		  s: (string) (len=25) "json: unknown field \"dog\""
 		})
 		```
@@ -73,11 +73,22 @@ struct { Cat string "json:\"cat\"" }
 
 
 	* **json.UnmarshalMap**
+	  Err: `<nil>`
+		<details>
+		
+		```go
+		(interface {}) <nil>
+		```
+		
+		</details>
+
+
+	* **json.UnmarshalMap + jsonutil.ExtraneousFieldPaths**
 	  Err: `extraneous fields (typos?) at paths: $.dog`
 		<details>
 		
 		```go
-		(*jsonutil.ExtraneousFieldsError)(0xc4200acd20)({
+		(*jsonutil.ExtraneousFieldsError)(0xc42000cec0)({
 		  Paths: ([][]string) (len=1 cap=1) {
 		    ([]string) (len=1 cap=1) {
 		      (string) (len=3) "dog"
@@ -111,9 +122,9 @@ struct { Cat struct {} "json:\"cat\"" }
 		<details>
 		
 		```go
-		(*json.UnmarshalTypeError)(0xc4200b0460)({
+		(*json.UnmarshalTypeError)(0xc4200a04b0)({
 		  Value: (string) (len=6) "string",
-		  Type: (*reflect.rtype)(0x120f960)({
+		  Type: (*reflect.rtype)(0x120fb20)({
 		    size: (uintptr) <nil>,
 		    ptrdata: (uintptr) <nil>,
 		    hash: (uint32) 670477339,
@@ -121,13 +132,13 @@ struct { Cat struct {} "json:\"cat\"" }
 		    align: (uint8) 1,
 		    fieldAlign: (uint8) 1,
 		    kind: (uint8) 153,
-		    alg: (*reflect.typeAlg)(0x13bcd10)({
+		    alg: (*reflect.typeAlg)(0x13bdd30)({
 		      hash: (func(unsafe.Pointer, uintptr) uintptr) 0x1001b60,
 		      equal: (func(unsafe.Pointer, unsafe.Pointer) bool) 0x1002360
 		    }),
-		    gcdata: (*uint8)(0x127a024)(1),
+		    gcdata: (*uint8)(0x127a228)(1),
 		    str: (reflect.nameOff) 21559,
-		    ptrToThis: (reflect.typeOff) 118208
+		    ptrToThis: (reflect.typeOff) 118240
 		  }),
 		  Offset: (int64) 15,
 		  Struct: (string) "",
@@ -143,9 +154,9 @@ struct { Cat struct {} "json:\"cat\"" }
 		<details>
 		
 		```go
-		(*json.UnmarshalTypeError)(0xc4200b04b0)({
+		(*json.UnmarshalTypeError)(0xc4200a0500)({
 		  Value: (string) (len=6) "string",
-		  Type: (*reflect.rtype)(0x120f960)({
+		  Type: (*reflect.rtype)(0x120fb20)({
 		    size: (uintptr) <nil>,
 		    ptrdata: (uintptr) <nil>,
 		    hash: (uint32) 670477339,
@@ -153,13 +164,13 @@ struct { Cat struct {} "json:\"cat\"" }
 		    align: (uint8) 1,
 		    fieldAlign: (uint8) 1,
 		    kind: (uint8) 153,
-		    alg: (*reflect.typeAlg)(0x13bcd10)({
+		    alg: (*reflect.typeAlg)(0x13bdd30)({
 		      hash: (func(unsafe.Pointer, uintptr) uintptr) 0x1001b60,
 		      equal: (func(unsafe.Pointer, unsafe.Pointer) bool) 0x1002360
 		    }),
-		    gcdata: (*uint8)(0x127a024)(1),
+		    gcdata: (*uint8)(0x127a228)(1),
 		    str: (reflect.nameOff) 21559,
-		    ptrToThis: (reflect.typeOff) 118208
+		    ptrToThis: (reflect.typeOff) 118240
 		  }),
 		  Offset: (int64) 15,
 		  Struct: (string) "",
@@ -179,7 +190,7 @@ struct { Cat struct {} "json:\"cat\"" }
 		<details>
 		
 		```go
-		(*errors.errorString)(0xc4200970e0)({
+		(*errors.errorString)(0xc4200111a0)({
 		  s: (string) (len=178) "struct { Cat struct {} \"json:\\\"cat\\\"\" }.Cat: skipObjectDecoder: expect object or null, error found in #8 byte of ...|{\"cat\": \"sammy\"}|..., bigger context ...|{\"cat\": \"sammy\"}|..."
 		})
 		```
@@ -196,10 +207,10 @@ struct { Cat struct {} "json:\"cat\"" }
 		<details>
 		
 		```go
-		(*structurederrors.ErrorWithContext)(0xc42013c0f0)({
-		  BaseError: (*json.UnmarshalTypeError)(0xc4200b0500)({
+		(*structurederrors.ErrorWithContext)(0xc4201081e0)({
+		  BaseError: (*json.UnmarshalTypeError)(0xc4200a0550)({
 		    Value: (string) (len=6) "string",
-		    Type: (*reflect.rtype)(0x120f960)({
+		    Type: (*reflect.rtype)(0x120fb20)({
 		      size: (uintptr) <nil>,
 		      ptrdata: (uintptr) <nil>,
 		      hash: (uint32) 670477339,
@@ -207,13 +218,13 @@ struct { Cat struct {} "json:\"cat\"" }
 		      align: (uint8) 1,
 		      fieldAlign: (uint8) 1,
 		      kind: (uint8) 153,
-		      alg: (*reflect.typeAlg)(0x13bcd10)({
+		      alg: (*reflect.typeAlg)(0x13bdd30)({
 		        hash: (func(unsafe.Pointer, uintptr) uintptr) 0x1001b60,
 		        equal: (func(unsafe.Pointer, unsafe.Pointer) bool) 0x1002360
 		      }),
-		      gcdata: (*uint8)(0x127a024)(1),
+		      gcdata: (*uint8)(0x127a228)(1),
 		      str: (reflect.nameOff) 21559,
-		      ptrToThis: (reflect.typeOff) 118208
+		      ptrToThis: (reflect.typeOff) 118240
 		    }),
 		    Offset: (int64) 15,
 		    Struct: (string) "",
@@ -233,10 +244,10 @@ struct { Cat struct {} "json:\"cat\"" }
 		<details>
 		
 		```go
-		(*structurederrors.ErrorWithContext)(0xc42013c1e0)({
-		  BaseError: (*json.UnmarshalTypeError)(0xc4200b0550)({
+		(*structurederrors.ErrorWithContext)(0xc4201082d0)({
+		  BaseError: (*json.UnmarshalTypeError)(0xc4200a05a0)({
 		    Value: (string) (len=6) "string",
-		    Type: (*reflect.rtype)(0x120f960)({
+		    Type: (*reflect.rtype)(0x120fb20)({
 		      size: (uintptr) <nil>,
 		      ptrdata: (uintptr) <nil>,
 		      hash: (uint32) 670477339,
@@ -244,13 +255,50 @@ struct { Cat struct {} "json:\"cat\"" }
 		      align: (uint8) 1,
 		      fieldAlign: (uint8) 1,
 		      kind: (uint8) 153,
-		      alg: (*reflect.typeAlg)(0x13bcd10)({
+		      alg: (*reflect.typeAlg)(0x13bdd30)({
 		        hash: (func(unsafe.Pointer, uintptr) uintptr) 0x1001b60,
 		        equal: (func(unsafe.Pointer, unsafe.Pointer) bool) 0x1002360
 		      }),
-		      gcdata: (*uint8)(0x127a024)(1),
+		      gcdata: (*uint8)(0x127a228)(1),
 		      str: (reflect.nameOff) 21559,
-		      ptrToThis: (reflect.typeOff) 118208
+		      ptrToThis: (reflect.typeOff) 118240
+		    }),
+		    Offset: (int64) 14,
+		    Struct: (string) "",
+		    Field: (string) (len=3) "cat"
+		  }),
+		  Context: ([]string) (len=1 cap=1) {
+		    (string) (len=5) "$.cat"
+		  }
+		})
+		```
+		
+		</details>
+
+
+	* **json.UnmarshalMap + jsonutil.ExtraneousFieldPaths**
+	  Err: `$.cat: json: cannot unmarshal string into Go struct field .cat of type struct {}`
+		<details>
+		
+		```go
+		(*structurederrors.ErrorWithContext)(0xc4201083c0)({
+		  BaseError: (*json.UnmarshalTypeError)(0xc4200a05f0)({
+		    Value: (string) (len=6) "string",
+		    Type: (*reflect.rtype)(0x120fb20)({
+		      size: (uintptr) <nil>,
+		      ptrdata: (uintptr) <nil>,
+		      hash: (uint32) 670477339,
+		      tflag: (reflect.tflag) 2,
+		      align: (uint8) 1,
+		      fieldAlign: (uint8) 1,
+		      kind: (uint8) 153,
+		      alg: (*reflect.typeAlg)(0x13bdd30)({
+		        hash: (func(unsafe.Pointer, uintptr) uintptr) 0x1001b60,
+		        equal: (func(unsafe.Pointer, unsafe.Pointer) bool) 0x1002360
+		      }),
+		      gcdata: (*uint8)(0x127a228)(1),
+		      str: (reflect.nameOff) 21559,
+		      ptrToThis: (reflect.typeOff) 118240
 		    }),
 		    Offset: (int64) 14,
 		    Struct: (string) "",

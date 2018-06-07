@@ -22,6 +22,19 @@ var koki = &Package{
 				if err := jsonutil.UnmarshalMap(vMap, v); err != nil {
 					return err
 				}
+				return nil
+			},
+		},
+		{
+			Desc: "json.UnmarshalMap + jsonutil.ExtraneousFieldPaths",
+			Unmarshal: func(b []byte, v interface{}) error {
+				vMap := make(map[string]interface{})
+				if err := json.Unmarshal(b, &vMap); err != nil {
+					return err
+				}
+				if err := jsonutil.UnmarshalMap(vMap, v); err != nil {
+					return err
+				}
 				if extraPaths, err := jsonutil.ExtraneousFieldPaths(vMap, v); err != nil {
 					return err
 				} else if len(extraPaths) > 0 {
