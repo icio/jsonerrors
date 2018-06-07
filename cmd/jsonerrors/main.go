@@ -135,13 +135,13 @@ func RenderMarkdownResults(w io.Writer, results []*TestResults) error {
 	tpl, err := t.New("jsonerrors-text").Funcs(t.FuncMap{
 		"spew": s.Sdump,
 		"code": func(lang, c string) string {
-			return "```" + lang + "\n" + c + "\n```"
+			return "```" + lang + "\n" + strings.TrimRight(c, "\n") + "\n```"
 		},
 		"indent": func(d int, b string) string {
 			return strings.Replace(b, "\n", "\n"+strings.Repeat("\t", d), -1)
 		},
 		"details": func(c string) string {
-			return "<details>\n" + c + "\n</details>"
+			return "<details>\n\n" + c + "\n\n</details>"
 		},
 	}).Parse(unindent(md, "\t", "\n"))
 	if err != nil {

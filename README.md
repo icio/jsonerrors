@@ -21,22 +21,24 @@ struct { Cat string "json:\"cat\"" }
 	* **json.Unmarshal**
 	  Err: `<nil>`
 		<details>
+		
 		```go
 		(interface {}) <nil>
-		
 		```
+		
 		</details>
 
 
 	* **json.Decoder.DisallowUnknownFields**
 	  Err: `json: unknown field "dog"`
 		<details>
+		
 		```go
 		(*errors.errorString)(0xc420096c30)({
 		  s: (string) (len=25) "json: unknown field \"dog\""
 		})
-		
 		```
+		
 		</details>
 
 
@@ -47,10 +49,11 @@ struct { Cat string "json:\"cat\"" }
 	* **jsoniter.ConfigCompatibleWithStandardLibrary**
 	  Err: `<nil>`
 		<details>
+		
 		```go
 		(interface {}) <nil>
-		
 		```
+		
 		</details>
 
 
@@ -61,16 +64,18 @@ struct { Cat string "json:\"cat\"" }
 	* **json.Unmarshal**
 	  Err: `<nil>`
 		<details>
+		
 		```go
 		(interface {}) <nil>
-		
 		```
+		
 		</details>
 
 
 	* **json.UnmarshalMap**
 	  Err: `extraneous fields (typos?) at paths: $.dog`
 		<details>
+		
 		```go
 		(*jsonutil.ExtraneousFieldsError)(0xc4200acd20)({
 		  Paths: ([][]string) (len=1 cap=1) {
@@ -79,8 +84,8 @@ struct { Cat string "json:\"cat\"" }
 		    }
 		  }
 		})
-		
 		```
+		
 		</details>
 
 
@@ -104,10 +109,11 @@ struct { Cat struct {} "json:\"cat\"" }
 	* **json.Unmarshal**
 	  Err: `json: cannot unmarshal string into Go struct field .cat of type struct {}`
 		<details>
+		
 		```go
 		(*json.UnmarshalTypeError)(0xc4200b0460)({
 		  Value: (string) (len=6) "string",
-		  Type: (*reflect.rtype)(0x120f940)({
+		  Type: (*reflect.rtype)(0x120f960)({
 		    size: (uintptr) <nil>,
 		    ptrdata: (uintptr) <nil>,
 		    hash: (uint32) 670477339,
@@ -119,7 +125,7 @@ struct { Cat struct {} "json:\"cat\"" }
 		      hash: (func(unsafe.Pointer, uintptr) uintptr) 0x1001b60,
 		      equal: (func(unsafe.Pointer, unsafe.Pointer) bool) 0x1002360
 		    }),
-		    gcdata: (*uint8)(0x1279ffc)(1),
+		    gcdata: (*uint8)(0x127a024)(1),
 		    str: (reflect.nameOff) 21559,
 		    ptrToThis: (reflect.typeOff) 118208
 		  }),
@@ -127,18 +133,19 @@ struct { Cat struct {} "json:\"cat\"" }
 		  Struct: (string) "",
 		  Field: (string) (len=3) "cat"
 		})
-		
 		```
+		
 		</details>
 
 
 	* **json.Decoder.DisallowUnknownFields**
 	  Err: `json: cannot unmarshal string into Go struct field .cat of type struct {}`
 		<details>
+		
 		```go
 		(*json.UnmarshalTypeError)(0xc4200b04b0)({
 		  Value: (string) (len=6) "string",
-		  Type: (*reflect.rtype)(0x120f940)({
+		  Type: (*reflect.rtype)(0x120f960)({
 		    size: (uintptr) <nil>,
 		    ptrdata: (uintptr) <nil>,
 		    hash: (uint32) 670477339,
@@ -150,7 +157,7 @@ struct { Cat struct {} "json:\"cat\"" }
 		      hash: (func(unsafe.Pointer, uintptr) uintptr) 0x1001b60,
 		      equal: (func(unsafe.Pointer, unsafe.Pointer) bool) 0x1002360
 		    }),
-		    gcdata: (*uint8)(0x1279ffc)(1),
+		    gcdata: (*uint8)(0x127a024)(1),
 		    str: (reflect.nameOff) 21559,
 		    ptrToThis: (reflect.typeOff) 118208
 		  }),
@@ -158,8 +165,8 @@ struct { Cat struct {} "json:\"cat\"" }
 		  Struct: (string) "",
 		  Field: (string) (len=3) "cat"
 		})
-		
 		```
+		
 		</details>
 
 
@@ -170,12 +177,13 @@ struct { Cat struct {} "json:\"cat\"" }
 	* **jsoniter.ConfigCompatibleWithStandardLibrary**
 	  Err: `struct { Cat struct {} "json:\"cat\"" }.Cat: skipObjectDecoder: expect object or null, error found in #8 byte of ...|{"cat": "sammy"}|..., bigger context ...|{"cat": "sammy"}|...`
 		<details>
+		
 		```go
 		(*errors.errorString)(0xc4200970e0)({
 		  s: (string) (len=178) "struct { Cat struct {} \"json:\\\"cat\\\"\" }.Cat: skipObjectDecoder: expect object or null, error found in #8 byte of ...|{\"cat\": \"sammy\"}|..., bigger context ...|{\"cat\": \"sammy\"}|..."
 		})
-		
 		```
+		
 		</details>
 
 
@@ -186,11 +194,12 @@ struct { Cat struct {} "json:\"cat\"" }
 	* **json.Unmarshal**
 	  Err: `$.cat: json: cannot unmarshal string into Go struct field .cat of type struct {}`
 		<details>
+		
 		```go
 		(*structurederrors.ErrorWithContext)(0xc42013c0f0)({
 		  BaseError: (*json.UnmarshalTypeError)(0xc4200b0500)({
 		    Value: (string) (len=6) "string",
-		    Type: (*reflect.rtype)(0x120f940)({
+		    Type: (*reflect.rtype)(0x120f960)({
 		      size: (uintptr) <nil>,
 		      ptrdata: (uintptr) <nil>,
 		      hash: (uint32) 670477339,
@@ -202,7 +211,7 @@ struct { Cat struct {} "json:\"cat\"" }
 		        hash: (func(unsafe.Pointer, uintptr) uintptr) 0x1001b60,
 		        equal: (func(unsafe.Pointer, unsafe.Pointer) bool) 0x1002360
 		      }),
-		      gcdata: (*uint8)(0x1279ffc)(1),
+		      gcdata: (*uint8)(0x127a024)(1),
 		      str: (reflect.nameOff) 21559,
 		      ptrToThis: (reflect.typeOff) 118208
 		    }),
@@ -214,19 +223,20 @@ struct { Cat struct {} "json:\"cat\"" }
 		    (string) (len=5) "$.cat"
 		  }
 		})
-		
 		```
+		
 		</details>
 
 
 	* **json.UnmarshalMap**
 	  Err: `$.cat: json: cannot unmarshal string into Go struct field .cat of type struct {}`
 		<details>
+		
 		```go
 		(*structurederrors.ErrorWithContext)(0xc42013c1e0)({
 		  BaseError: (*json.UnmarshalTypeError)(0xc4200b0550)({
 		    Value: (string) (len=6) "string",
-		    Type: (*reflect.rtype)(0x120f940)({
+		    Type: (*reflect.rtype)(0x120f960)({
 		      size: (uintptr) <nil>,
 		      ptrdata: (uintptr) <nil>,
 		      hash: (uint32) 670477339,
@@ -238,7 +248,7 @@ struct { Cat struct {} "json:\"cat\"" }
 		        hash: (func(unsafe.Pointer, uintptr) uintptr) 0x1001b60,
 		        equal: (func(unsafe.Pointer, unsafe.Pointer) bool) 0x1002360
 		      }),
-		      gcdata: (*uint8)(0x1279ffc)(1),
+		      gcdata: (*uint8)(0x127a024)(1),
 		      str: (reflect.nameOff) 21559,
 		      ptrToThis: (reflect.typeOff) 118208
 		    }),
@@ -250,8 +260,8 @@ struct { Cat struct {} "json:\"cat\"" }
 		    (string) (len=5) "$.cat"
 		  }
 		})
-		
 		```
+		
 		</details>
 
 
